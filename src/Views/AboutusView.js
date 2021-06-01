@@ -1,11 +1,13 @@
 import React from 'react';
-import Aboutus from '../Components/Aboutus';
+import Aboutus from '../Components/aboutus';
 
 
 
 const AboutusView = () => {
    return(
-<Aboutus></Aboutus>
+<Aboutus>
+   <h1>Please Welcome</h1>
+</Aboutus>
    ) 
 }
 export default AboutusView;

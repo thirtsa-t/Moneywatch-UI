@@ -28,9 +28,6 @@ const MainLayout=({children}) =>{
             <Menu.Item key="3" icon={<UploadOutlined />}>
               Report
             </Menu.Item>
-            <Menu.Item key="3" icon={<UploadOutlined />}>
-              Report
-            </Menu.Item>
           </Menu>
         </Sider>
         <Layout className="site-layout">
