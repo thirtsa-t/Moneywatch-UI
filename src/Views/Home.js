@@ -1,17 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import { Card } from 'antd';
-import { Link } from 'react-router-dom';
-import MainLayout from '../Components/Layout'
+import React from 'react';
+import MainLayout from '../Components/MainLayout';
+const Home=()=>{
+    return(
 
+            <MainLayout>
 
-const Home = () => {
-  
-    return (
-        <MainLayout>
-    
-     my home
-      
-        </MainLayout>
-    )
+            </MainLayout>    )
 }
 export default Home;
