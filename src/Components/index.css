@@ -21,14 +21,23 @@
 /* 
 .add-trans{
     float: right;
-    margin: 45% 20% 10% 75%;
+    margin: 30% 30% 30% 75%;
     position: fixed;
    font-size:40px;
    width: 70px;
    height: 70px;
    text-align: center;
    
+ft-dashboard
+   }
+   .menu-icon :hover{
+
+    color:green;
+   }
+   
+
    } */
+ develop
    
 
 .signup-header {
@@ -56,7 +65,26 @@
   color: white;
   background: green;
 }
+.logout-form-button {
+    color: white;
+    background: green;
+    width: 100px;
+    margin: 0% 30% 30% 90%;
+  }
+  .logout-form-button:hover {
+    opacity: 0.7;
+    color: white;
+    background: green;
+  }
+ .add-button{
+   
+}
+ .add-button:hover {
+    opacity: 0.7;
+    color: white;
+    background: green;
 
+ }
 .home-layout {
   background: url("../Assets/image.jpg");
   width: 100%;
@@ -134,3 +162,7 @@
   margin-top: 40%;
   margin: 30%;
 }
+
+   
+  
+  
