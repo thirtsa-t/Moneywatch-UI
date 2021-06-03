@@ -49,18 +49,9 @@ const MainLayout=({children}) =>{
           
           <Header className="header-layout" width="10vh" style={{ padding: 0, backgroundColor:"white" }}>
           <div className="headerIcon">
+            <SearchOutlined className="searchIcon"/>
           <Button type="primary" htmlType="link" className="head-button"> Add Transaction
           </Button>
-          <div className="socialMediaAllIcon">
-            <menu theme="dark" mode="horizontal" defaultSelectedKeys={['0']}>
-            <GithubOutlined className="socialMediaIcon"/>
-            <LinkedinFilled className="socialMediaIcon"/>
-            <TwitterOutlined className="socialMediaIcon" />
-            <SlackSquareOutlined className="socialMediaIcon" />
-            <SearchOutlined className="searchIcon"/>
-            </menu>
-            </div>
-          <SearchOutlined className="searchIcon"/>
           </div> 
           </Header>
           <Content
