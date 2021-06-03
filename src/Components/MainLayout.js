@@ -1,14 +1,15 @@
-import React ,{useState}from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
+import {Link} from 'react-router-dom'
 import 'antd/dist/antd.css';
 import './index.css';
-import { Layout, Menu, Breadcrumb ,Button, Affix, Modal, Form, Input, Radio } from 'antd';
+import { Layout, Menu, Breadcrumb, Button, Affix, Modal, Form, Input, Radio } from 'antd';
 import {
-  DesktopOutlined,
+  MenuOutlined,
   PieChartOutlined,
-  FileOutlined,
-  TeamOutlined,
-  UserOutlined,
+  WalletOutlined,
+  MoneyCollectOutlined,
+  ReconciliationOutlined,
 } from '@ant-design/icons';
 
 
@@ -74,74 +75,81 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
 };
 
 
-const MainLayout =({children})=>{
+const MainLayout = ({ children }) => {
 
-const [collapsed ,setCollapsed]=useState(false);
+  const [collapsed, setCollapsed] = useState(false);
 
-const onCollapse =(collapsed)=>{
+  const onCollapse = (collapsed) => {
 
-  setCollapsed(collapsed);
-}
+    setCollapsed(collapsed);
+  }
 
-const [bottom, setBottom] = useState(10);
-const [visible, setVisible] = useState(false);
+  const [bottom, setBottom] = useState(10);
+  const [visible, setVisible] = useState(false);
 
-const onCreate = (values) => {
-  console.log("Received values of form: ", values);
-  setVisible(false);
-};
+  const onCreate = (values) => {
+    console.log("Received values of form: ", values);
+    setVisible(false);
+  };
 
-  return(
+  return (
     <Layout style={{ minHeight: '100vh' }}>
-    <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
-      <div className="logo" />
-      <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
-        <Menu.Item key="1" icon={<PieChartOutlined />}>
-          Option 1
+      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}  style={{ backgroundColor: "white",minHeight: '100vh' }}>
+        <div className="logo" />
+        <Menu theme="white" defaultSelectedKeys={['1']} mode="inline" className="menu-icon">
+          <Menu.Item key="1" icon={<PieChartOutlined />}>
+            
         </Menu.Item>
-        <Menu.Item key="2" icon={<DesktopOutlined />}>
-          Option 2
+          <Menu.Item key="2" icon={<MenuOutlined />}>
+            
         </Menu.Item>
-        <SubMenu key="sub1" icon={<UserOutlined />} title="User">
-          <Menu.Item key="3">Tom</Menu.Item>
-          <Menu.Item key="4">Bill</Menu.Item>
-          <Menu.Item key="5">Alex</Menu.Item>
-        </SubMenu>
-        <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
-          <Menu.Item key="6">Team 1</Menu.Item>
-          <Menu.Item key="8">Team 2</Menu.Item>
-        </SubMenu>
-        <Menu.Item key="9" icon={<FileOutlined />}>
-          Files
+          <Menu.Item key="sub1" icon={<ReconciliationOutlined />} >Report
+          
+          </Menu.Item>
+          <Menu.Item key="sub2" icon={<MoneyCollectOutlined />}>Bugdet
+      
+          </Menu.Item>
+          <Menu.Item key="9" icon={<WalletOutlined />}>
+            Transaction
         </Menu.Item>
-      </Menu>
-    </Sider>
-    <Layout className="site-layout">
-      <Header className="site-layout-background" style={{ padding: 0 }} />
-      <Content style={{ margin: '0 16px' }}>
-      <Button
-        type="primary"
-        shape="circle"
-        className="add-trans"
-        onClick={() => {
-          setVisible(true);
-        }}
-      >
-        +
+        </Menu>
+      </Sider>
+      <Layout className="site-layout">
+        <Header className="site-layout-background" style={{ padding: 0 ,backgroundColor: "white"}} >
+        <Link to="/dashboard">
+        <Button type="primary"  htmlType="submit" className="logout-form-button">
+              Log out
+        </Button> 
+      </Link>
+      <Button type="primary"  htmlType="submit" className="add-button">
+              Add
+        </Button> 
+        </Header>
+        <Content style={{ margin: '0 16px' }}>
+          <Button
+            type="primary"
+            shape="circle"
+            className="add-trans"
+            onClick={() => {
+              setVisible(true);
+            }}
+          >
+            +
       </Button>
 
-      <CollectionCreateForm
-        visible={visible}
-        onCreate={onCreate}
-        onCancel={() => {
-          setVisible(false);
-        }}
-      />
-{children}
-      </Content>
-      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+          <CollectionCreateForm
+            visible={visible}
+            onCreate={onCreate}
+            onCancel={() => {
+              setVisible(false);
+            }}
+          
+          />
+          {children}
+        </Content>
+        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+      </Layout>
     </Layout>
-  </Layout>
   )
 }
 
