@@ -1,75 +1,148 @@
-import React,{useState} from 'react';
+import React ,{useState}from 'react';
 import ReactDOM from 'react-dom';
-import {Link} from 'react-router-dom';
 import 'antd/dist/antd.css';
 import './index.css';
-import { Layout, Menu, Button} from 'antd';
+import { Layout, Menu, Breadcrumb ,Button, Affix, Modal, Form, Input, Radio } from 'antd';
 import {
-
-  SearchOutlined,
-  GithubOutlined,
-  LinkedinFilled,
-  TwitterOutlined,
-  SlackSquareOutlined, 
-  WalletOutlined,
-  MenuOutlined,
-  MoneyCollectOutlined, 
-  QuestionCircleFilled,
-  
+  DesktopOutlined,
+  PieChartOutlined,
+  FileOutlined,
+  TeamOutlined,
+  UserOutlined,
 } from '@ant-design/icons';
 
-const { Header, Sider, Content } = Layout;
-const MainLayout=({children}) =>{
-    const [collapsed,setCollapsed]= useState(false)
-  const toggle = () => {
- setCollapsed(!collapsed)
-  };
 
-    return (
-      <Layout>
-        <Sider className='ant-menu' trigger={null} collapsible collapsed={collapsed} width="10vh" 
-        style={{minHeight: "200vh", position:"fixed", backgroundColor:"white"}}>
-          <div className="siderIcon" />
+const { Header, Content, Footer, Sider } = Layout;
+const { SubMenu } = Menu;
 
-          <Menu mode="inline" defaultSelectedKeys={['0']}>
-          <Menu.Item key="1" icon={<MenuOutlined style={{fontSize:"15px"}} />}></Menu.Item>
+const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
+  const [form] = Form.useForm();
+  return (
+    <Modal
+      visible={visible}
+      title="Add transaction"
+      okText="Add"
+      cancelText="Cancel"
+      onCancel={onCancel}
+      onOk={() => {
+        form
+          .validateFields()
+          .then((values) => {
+            form.resetFields();
+            onCreate(values);
+          })
+          .catch((info) => {
+            console.log("Validate Failed:", info);
+          });
+      }}
+    >
+      <Form
+        form={form}
+        layout="vertical"
+        name="form_in_modal"
+        initialValues={{
+          modifier: "public",
+        }}
+      >
+        <Form.Item
+          name="title"
+          label="Title"
+          rules={[
+            {
+              required: true,
+              message: "Please input the title of collection!",
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item name="description" label="Description">
+          <Input type="textarea" />
+        </Form.Item>
+        <Form.Item
+          name="modifier"
+          className="collection-create-form_last-form-item"
+        >
+          <Radio.Group>
+            <Radio value="public">Public</Radio>
+            <Radio value="private">Private</Radio>
+          </Radio.Group>
+        </Form.Item>
+      </Form>
+    </Modal>
+  );
+};
 
-            <Menu.Item key="2" icon={<WalletOutlined style={{fontSize:"18px", marginTop:"20px"}}/>}>
-            </Menu.Item><p style={{fontSize:"10px", marginTop:"5px", marginLeft:"10px"}}>Transaction</p>
 
-            <Menu.Item key="3" icon={<MoneyCollectOutlined style={{fontSize:"18px", marginTop:"20px"}}/>}>
-            </Menu.Item><p style={{fontSize:"10px", marginTop:"5px", marginLeft:"16px"}}>Budget</p>
+const MainLayout =({children})=>{
 
-            <Menu.Item key="4" icon={<QuestionCircleFilled  style={{fontSize:"18px", marginTop:"20px"}}/>}>
-            </Menu.Item><p style={{fontSize:"10px", marginTop:"5px", marginLeft:"16px"}}>Report</p>
+const [collapsed ,setCollapsed]=useState(false);
 
-          </Menu>
-        </Sider>
-        <Layout className="site-layout">
-          
-          <Header className="header-layout" width="10vh" style={{ padding: 0, backgroundColor:"white" }}>
-          <div className="headerIcon">
-            <SearchOutlined className="searchIcon"/>
-          <Button type="primary" htmlType="link" className="head-button"> Add Transaction
-          </Button>
-          </div> 
-          </Header>
-          <Content
-            className="site-layout-background"
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              minHeight: 280,
-            }}
-          >
-            ({children})
-          </Content>
-        </Layout>
-      </Layout>
-    );
-  }
+const onCollapse =(collapsed)=>{
 
+  setCollapsed(collapsed);
+}
 
+const [bottom, setBottom] = useState(10);
+const [visible, setVisible] = useState(false);
 
+const onCreate = (values) => {
+  console.log("Received values of form: ", values);
+  setVisible(false);
+};
+
+  return(
+    <Layout style={{ minHeight: '100vh' }}>
+    <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
+      <div className="logo" />
+      <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
+        <Menu.Item key="1" icon={<PieChartOutlined />}>
+          Option 1
+        </Menu.Item>
+        <Menu.Item key="2" icon={<DesktopOutlined />}>
+          Option 2
+        </Menu.Item>
+        <SubMenu key="sub1" icon={<UserOutlined />} title="User">
+          <Menu.Item key="3">Tom</Menu.Item>
+          <Menu.Item key="4">Bill</Menu.Item>
+          <Menu.Item key="5">Alex</Menu.Item>
+        </SubMenu>
+        <SubMenu key="sub2" icon={<TeamOutlined />} title="Team">
+          <Menu.Item key="6">Team 1</Menu.Item>
+          <Menu.Item key="8">Team 2</Menu.Item>
+        </SubMenu>
+        <Menu.Item key="9" icon={<FileOutlined />}>
+          Files
+        </Menu.Item>
+      </Menu>
+    </Sider>
+    <Layout className="site-layout">
+      <Header className="site-layout-background" style={{ padding: 0 }} />
+      <Content style={{ margin: '0 16px' }}>
+      <Button
+        type="primary"
+        shape="circle"
+        className="add-trans"
+        onClick={() => {
+          setVisible(true);
+        }}
+      >
+        +
+      </Button>
+
+      <CollectionCreateForm
+        visible={visible}
+        onCreate={onCreate}
+        onCancel={() => {
+          setVisible(false);
+        }}
+      />
+{children}
+      </Content>
+      <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+    </Layout>
+  </Layout>
+  )
+}
 
 export default MainLayout;

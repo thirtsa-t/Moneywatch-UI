@@ -8,6 +8,7 @@ import './index.css';
 
 const Contactpage=()=>{
     return(
+        <>
         <Card>
             <h1>
             Contact us
@@ -16,15 +17,16 @@ const Contactpage=()=>{
             Phone: +250 789 098 736
             Email: SheCanCode@gmail.com 
             </h2>
-            <div className='footer'>
-                <footer>
-                   <p className='foots'>terms of service</p> 
-                    <p1 className='foot'> privacy of policy</p1>
-                    <p2 className='feet'>Copyright@2021MoneyWatch</p2>
-                </footer>
-            </div>
 
         </Card>
+        <div className='footer'>
+                <footer>
+                   <p1 className=''>terms of service </p1> 
+                    <p1 > privacy of policy</p1>
+                    <p2 style={{float: 'right'}}>Copyright@2021MoneyWatch</p2>
+                </footer>
+            </div>
+        </>
     )
 }
         export default Contactpage;
