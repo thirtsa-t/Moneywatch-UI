@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import 'antd/dist/antd.css';
-import ReactDOM from 'react-dom';
+import {Link} from 'react-router-dom';
 import './index.css';
 import { useHistory } from 'react-router-dom';
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete, Card, notification } from 'antd';
@@ -17,11 +17,11 @@ const SignupComponent = () => {
   const [autoCompleteResult, setAutoCompleteResult] = useState([]);
 
   return (
-    <div>
+    <>
 
       <Card className="signuptop-form">
 
-        <h1 className="signup-header">MONEY WATCH</h1>
+      <Link to="/home">  <h1 className="signup-header">Money watch</h1> </Link> 
 
 
       </Card>
@@ -197,7 +197,7 @@ const SignupComponent = () => {
             </Checkbox>
           </Form.Item>
           <Form.Item >
-            <Button type="primary" htmlType="submit">
+            <Button type="primary" htmlType="submit" className="login-form-button">
               Register
         </Button>
           </Form.Item>
@@ -209,7 +209,7 @@ const SignupComponent = () => {
 
 
 
-    </div>
+    </>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import {Link} from 'react-router-dom'
 import 'antd/dist/antd.css';
 import './index.css';
 import { Form, Input, Button, Checkbox, Card  } from 'antd';
@@ -14,11 +15,13 @@ const signinComponent = () => {
     <div>
       <Card className="signuptop-form">
 
-        <h1 className="signup-header">MONEY WATCH</h1>
+      <Link to="/home">  <h1 className="signup-header">Money watch</h1> </Link> 
 
 
       </Card>
       <Card className="signin-form">
+
+        <h1> Login</h1>
 
         <Form
           name="normal_login"
@@ -81,10 +84,13 @@ const signinComponent = () => {
           </Form.Item>
           <Form.Item>
             
-              <Button type="primary"  htmlType="submit" className="login-form-button">
+            <Link to="/dashboard">
+
+            <Button type="primary"  htmlType="submit" className="login-form-button">
               Log in
         </Button> 
-        Or <a href="">register now!</a>
+            </Link>
+        Or <a href="/signup">Register now!</a>
           </Form.Item>
         </Form>
       </Card>
