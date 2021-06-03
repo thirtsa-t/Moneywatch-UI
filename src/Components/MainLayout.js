@@ -2,13 +2,15 @@ import React ,{useState}from 'react';
 import ReactDOM from 'react-dom';
 import 'antd/dist/antd.css';
 import './index.css';
-import { Layout, Menu, Breadcrumb ,Button, Affix, Modal, Form, Input, Radio } from 'antd';
+import { Layout, Menu ,Button, Modal, Form, Row, Col,Input} from 'antd';
 import {
   DesktopOutlined,
   PieChartOutlined,
   FileOutlined,
   TeamOutlined,
   UserOutlined,
+  DownOutlined, 
+  UpOutlined,
 } from '@ant-design/icons';
 
 
@@ -16,12 +18,40 @@ const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
 
 const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
+  const [expand, setExpand] = useState(false);
   const [form] = Form.useForm();
+
+  const getFields = () => {
+    const count = expand ? 5 : 3;
+    const children = [];
+
+    for (let i = 0; i < count; ) {
+      
+      children.push(
+        <Col span={12} key={i}>
+          <Form.Item
+            
+            
+          >
+            
+            <Input placeholder="Add Transaction"/>
+            
+          </Form.Item>
+        </Col>,
+      );
+    }
+
+    return children;
+  };
+  const onFinish = (values) => {
+    console.log('Received values of form: ', values);
+  };
+
   return (
     <Modal
       visible={visible}
       title="Add transaction"
-      okText="Add"
+      okText="Save"
       cancelText="Cancel"
       onCancel={onCancel}
       onOk={() => {
@@ -35,40 +65,43 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             console.log("Validate Failed:", info);
           });
       }}
+      
+      
+
     >
-      <Form
-        form={form}
-        layout="vertical"
-        name="form_in_modal"
-        initialValues={{
-          modifier: "public",
-        }}
-      >
-        <Form.Item
-          name="title"
-          label="Title"
-          rules={[
-            {
-              required: true,
-              message: "Please input the title of collection!",
-            },
-          ]}
+     <Form
+      form={form}
+      name="advanced_search"
+      className="ant-advanced-search-form"
+      onFinish={onFinish}
+    >
+      <Row gutter={12}>{getFields()}</Row>
+      <Row>
+        <Col
+          span={12}
+          style={{
+            textAlign: 'right',
+          }}
         >
-          <Input />
-        </Form.Item>
-        <Form.Item name="description" label="Description">
-          <Input type="textarea" />
-        </Form.Item>
-        <Form.Item
-          name="modifier"
-          className="collection-create-form_last-form-item"
-        >
-          <Radio.Group>
-            <Radio value="public">Public</Radio>
-            <Radio value="private">Private</Radio>
-          </Radio.Group>
-        </Form.Item>
-      </Form>
+          <Button type="primary" htmlType="submit">
+            
+          </Button>
+         
+           
+          
+          <a
+            style={{
+              fontSize: 12,
+            }}
+            onClick={() => {
+              setExpand(!expand);
+            }}
+          >
+            {expand ? <UpOutlined /> : <DownOutlined />} Collapse
+          </a>
+        </Col>
+      </Row>
+    </Form>
     </Modal>
   );
 };
@@ -90,6 +123,8 @@ const onCreate = (values) => {
   console.log("Received values of form: ", values);
   setVisible(false);
 };
+
+
 
   return(
     <Layout style={{ minHeight: '100vh' }}>
