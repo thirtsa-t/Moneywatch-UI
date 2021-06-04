@@ -18,7 +18,7 @@
 .register {
   text-align: center;
 }
-/* 
+
 .add-trans{
     float: right;
     margin: 30% 30% 30% 75%;
@@ -28,7 +28,7 @@
    height: 70px;
    text-align: center;
    
-ft-dashboard
+
    }
    .menu-icon :hover{
 
@@ -36,8 +36,10 @@ ft-dashboard
    }
    
 
-   } */
- develop
+.modal-container{
+    width: 80%;
+    background:red;
+}
    
 
 .signup-header {

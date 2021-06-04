@@ -3,22 +3,21 @@ import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom'
 import 'antd/dist/antd.css';
 import './index.css';
-ft-dashboard
+
 import { Layout, Menu, Breadcrumb, Button, Affix, Modal, Form, Input, Radio } from 'antd';
 
 
-develop
 import {
   MenuOutlined,
   PieChartOutlined,
- ft-dashboard
+
   WalletOutlined,
   MoneyCollectOutlined,
   ReconciliationOutlined,
 
-  develop
 } from '@ant-design/icons';
 
+import AddTransaction from './addTransaction';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -31,21 +30,6 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
     const count = expand ? 5 : 3;
     const children = [];
 
-    for (let i = 0; i < count; ) {
-      
-      children.push(
-        <Col span={12} key={i}>
-          <Form.Item
-            
-            
-          >
-            
-            <Input placeholder="Add Transaction"/>
-            
-          </Form.Item>
-        </Col>,
-      );
-    }
 
     return children;
   };
@@ -57,6 +41,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
     <Modal
       visible={visible}
       title="Add transaction"
+      width="100vh"
       okText="Save"
       cancelText="Cancel"
       onCancel={onCancel}
@@ -71,43 +56,8 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
             console.log("Validate Failed:", info);
           });
       }}
-      
-      
-
     >
-     <Form
-      form={form}
-      name="advanced_search"
-      className="ant-advanced-search-form"
-      onFinish={onFinish}
-    >
-      <Row gutter={12}>{getFields()}</Row>
-      <Row>
-        <Col
-          span={12}
-          style={{
-            textAlign: 'right',
-          }}
-        >
-          <Button type="primary" htmlType="submit">
-            
-          </Button>
-         
-           
-          
-          <a
-            style={{
-              fontSize: 12,
-            }}
-            onClick={() => {
-              setExpand(!expand);
-            }}
-          >
-            {expand ? <UpOutlined /> : <DownOutlined />} Collapse
-          </a>
-        </Col>
-      </Row>
-    </Form>
+      <AddTransaction/>
     </Modal>
   );
 };
@@ -130,13 +80,13 @@ const MainLayout = ({ children }) => {
     setVisible(false);
   };
 
-ft-dashboard
+
 
 
 
 
   return(
-develop
+
     <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}  style={{ backgroundColor: "white",minHeight: '100vh' }}>
         <div className="logo" />
@@ -165,9 +115,6 @@ develop
               Log out
         </Button> 
       </Link>
-      <Button type="primary"  htmlType="submit" className="add-button">
-              Add
-        </Button> 
         </Header>
         <Content style={{ margin: '0 16px' }}>
           <Button
