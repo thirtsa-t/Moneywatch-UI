@@ -18,6 +18,7 @@ import {
 } from '@ant-design/icons';
 
 import AddTransaction from './addTransaction';
+import Report from './Report'
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -60,6 +61,29 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
       <AddTransaction/>
     </Modal>
   );
+  return (
+    <Modal
+      visible={visible}
+      title="Add transaction"
+      width="100vh"
+      okText="Save"
+      cancelText="Cancel"
+      onCancel={onCancel}
+      onOk={() => {
+        form
+          .validateFields()
+          .then((values) => {
+            form.resetFields();
+            onCreate(values);
+          })
+          .catch((info) => {
+            console.log("Validate Failed:", info);
+          });
+      }}
+    >
+      <Report/>
+    </Modal>
+  );
 };
 
 
@@ -86,8 +110,8 @@ const MainLayout = ({ children }) => {
 
 
   return(
-
-    <Layout style={{ minHeight: '100vh' }}>
+<Layout style={{ minHeight: '100vh' }}>
+    
       <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}  style={{ backgroundColor: "white",minHeight: '100vh' }}>
         <div className="logo" />
         <Menu theme="white" defaultSelectedKeys={['1']} mode="inline" className="menu-icon">
@@ -97,8 +121,12 @@ const MainLayout = ({ children }) => {
           <Menu.Item key="2" icon={<MenuOutlined />}>
             
         </Menu.Item>
-          <Menu.Item key="sub1" icon={<ReconciliationOutlined />} >Report
+          <Menu.Item key="sub1" icon={<ReconciliationOutlined />} >
+            
+        <Link to="Report"> 
+            Report
           
+            </Link>
           </Menu.Item>
           <Menu.Item key="sub2" icon={<MoneyCollectOutlined />}>Bugdet
       
@@ -110,7 +138,7 @@ const MainLayout = ({ children }) => {
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 ,backgroundColor: "white"}} >
-        <Link to="/dashboard">
+        <Link to="/signin">
         <Button type="primary"  htmlType="submit" className="logout-form-button">
               Log out
         </Button> 
@@ -138,7 +166,7 @@ const MainLayout = ({ children }) => {
           />
           {children}
         </Content>
-        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
+        <Footer style={{ textAlign: 'center' }}>MoneyWatch ©2021 Created by twisted boot coders</Footer>
       </Layout>
     </Layout>
   )
