@@ -1,11 +1,12 @@
 import React from 'react';
 import Report from '../Components/Report';
+import MainLayout from '../Components/MainLayout';
 
 const ReportView  =()=>{
     return(
-        <div>
+        <MainLayout>
             <Report></Report>
-        </div>
+        </MainLayout>
     )
 }
 export default ReportView 
