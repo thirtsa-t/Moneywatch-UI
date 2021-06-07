@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import "antd/dist/antd.css";
-import "./index.css";
+import "./transaction.css";
 import {
   Form,
   Input,
@@ -30,10 +30,11 @@ const AddTransaction = () => {
       labelCol={{ span: 8 }}
       wrapperCol={{ span: 16 }}
     >
+   
       <Row>
         <Col span={12}>
-          <Form.Item label="Type">
-            <Input.Group compact>
+          <Form.Item label=" Transaction Type">
+            <Input.Group compact>  
               <Form.Item
                 name="category"
                 noStyle
@@ -44,42 +45,62 @@ const AddTransaction = () => {
                   <Option value="expense">Expense</Option>
                   <Option value="saving">Saving</Option>
                 </Select>
+                
+              </Form.Item>
+          
+      
+            </Input.Group>
+          </Form.Item>    <Col span={12}>
+          <Form.Item label="Amount" >
+            <Input.Group compact>
+              <Form.Item
+                name="category"
+                noStyle
+                rules={[{ required: true, message: "Amount is required" }]}
+              >
+                <Select placeholder="insert amount" >
+                 
+                
+                </Select>
               </Form.Item>
             </Input.Group>
           </Form.Item>
 
-          <Form.Item label="Username">
+        </Col>
+      
+
+          <Form.Item label="Date">
             <Space>
               <Form.Item
-                name="username"
+                name="Date"
                 noStyle
-                rules={[{ required: true, message: "Username is required" }]}
+                rules={[{ required: true, message: "Date is required" }]}
               >
-                <Input style={{ width: 160 }} placeholder="Please input" />
+                <Input style={{ width: 100 }} placeholder="12/12/2020" />
               </Form.Item>
-              <Tooltip title="Useful information">
-                <Typography.Link href="#API">Need Help?</Typography.Link>
-              </Tooltip>
+              
             </Space>
+          
+      
           </Form.Item>
-          <Form.Item label="Username">
+          <Form.Item label="Comment">
             <Space>
               <Form.Item
                 name="username"
                 noStyle
-                rules={[{ required: true, message: "Username is required" }]}
+                rules={[{ required: true, message: "Comment is required" }]}
               >
-                <Input style={{ width: 160 }} placeholder="Please input" />
+                <Input style={{ width: 300 }} placeholder="Note....." />
               </Form.Item>
-              <Tooltip title="Useful information">
-                <Typography.Link href="#API">Need Help?</Typography.Link>
-              </Tooltip>
+             
             </Space>
           </Form.Item>
         </Col>
+        
+    
 
         {/* column 2 */}
-        <Col span={12}>
+        <Col span={12} >
           <Form.Item label="Category">
             <Input.Group compact>
               <Form.Item
@@ -97,7 +118,10 @@ const AddTransaction = () => {
           </Form.Item>
 
         </Col>
+        
       </Row>
+    
+      
     </Form>
   );
 };
