@@ -137,9 +137,14 @@ const MainLayout = ({ children }) => {
   return(
 <Layout style={{ minHeight: '100vh' }}>
     
+
+ return(
+
+    <Layout style={{ minHeight: '100vh' }}>
+
       <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}  style={{ backgroundColor: "white",minHeight: '100vh' }}>
         <div className="logo" />
-        <Menu theme="white" defaultSelectedKeys={['1']} mode="inline" className="menu-icon">
+        <Menu theme="red" defaultSelectedKeys={['1']} mode="inline" className="menu-icon">
           <Menu.Item key="1" icon={<PieChartOutlined />}>
             
         </Menu.Item>
@@ -158,9 +163,13 @@ const MainLayout = ({ children }) => {
             Bugdet
             </Link>
           </Menu.Item>
-          <Menu.Item key="9" icon={<WalletOutlined />}>
+          <Link to="/transaction">
+           <Menu.Item key="9" icon={<WalletOutlined />}>
             Transaction
-        </Menu.Item>
+            
+          </Menu.Item>
+          </Link>
+        
         </Menu>
       </Sider>
       <Layout className="site-layout">
@@ -181,7 +190,7 @@ const MainLayout = ({ children }) => {
             }}
           >
             +
-      </Button>
+      </Button> 
 
           <CollectionCreateForm
             visible={visible}
@@ -190,10 +199,16 @@ const MainLayout = ({ children }) => {
               setVisible(false);
             }}
           
+
           />
           {children}
+          
         </Content>
+
         <Footer style={{ textAlign: 'center' }}>MoneyWatch ©2021 Created by twisted boot coders</Footer>
+
+        <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Money Watch</Footer>
+
       </Layout>
     </Layout>
   )

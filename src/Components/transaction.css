@@ -1,0 +1,18 @@
+.carte{
+background-color: teal;
+width: 60%;
+height: 60%;
+float: right;
+margin:  8% 15% 25%;
+position: fixed;
+font-size:40px;
+}
+.card{
+        text-align: center;
+        font-size: 70%;
+        
+        
+       }
+       .card hover{
+           color: teal;
+       }
