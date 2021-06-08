@@ -1,13 +1,15 @@
 import React from 'react';
 import Report from '../Components/Report';
 import Transactions from '../Components/Transactions';
+import MainLayout from '../Components/MainLayout';
 
 
 const TransactionView  =()=>{
     return(
-        <div>
+        <MainLayout>
+        
             <Transactions></Transactions>
-        </div>
+       </MainLayout>
     )
 }
 export default TransactionView;
