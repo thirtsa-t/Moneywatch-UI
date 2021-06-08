@@ -14,7 +14,9 @@ const contentStyle = {
 
 const Homepage = () => {
   return (
-    <div className=" home-layout">
+    <div className="home-layout">
+      <div className="home-black">
+        
       <h1 style={{ margin: "3% 0% 0% 5%", font: "15px", color: "white" }}>
         Money watch
       </h1>
@@ -30,26 +32,27 @@ const Homepage = () => {
           
           </h3>
         </div>
-        <div>
+        <div className="about-paragraphy">
           <h3 style={contentStyle}>
-          <p2>Do not save what is left after spending, but spend what is left after saving.</p2>
+          <p2> " Do not save what is left after spending, but spend what is left after saving. "</p2>
           </h3>
         </div>
-        <div>
+        <div className="about-paragraphy">
           <h3 style={contentStyle}>
-            <p3>Never spend your money before you have it.</p3>
+            <p3>" Never spend your money before you have it. "</p3>
           </h3>
         </div>
-        <div>
+        <div className="about-paragraphy">
           <h3 style={contentStyle}>
-            <p5>He who buys what he does not need, steals from himself.</p5>
+            <p5>" He who buys what he does not need, steals from himself. "</p5>
           </h3>
         </div>
       </Carousel>
       <div>
         <Button type="primary" htmlType="link" className="home-button">
-          <Link to="/signin">Let's Get Started.</Link>
+          <Link to="/signin"> <b> Let's Get Started</b></Link>
         </Button>
+      </div>
       </div>
     </div>
   );
