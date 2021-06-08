@@ -42,7 +42,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
     <Modal
       visible={visible}
       title="Add transaction"
-      width="100vh"
+      width="60%"
       okText="Save"
       cancelText="Cancel"
       onCancel={onCancel}
@@ -59,29 +59,6 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
       }}
     >
       <AddTransaction/>
-    </Modal>
-  );
-  return (
-    <Modal
-      visible={visible}
-      title="Add transaction"
-      width="100vh"
-      okText="Save"
-      cancelText="Cancel"
-      onCancel={onCancel}
-      onOk={() => {
-        form
-          .validateFields()
-          .then((values) => {
-            form.resetFields();
-            onCreate(values);
-          })
-          .catch((info) => {
-            console.log("Validate Failed:", info);
-          });
-      }}
-    >
-      <Report/>
     </Modal>
   );
 };
@@ -106,11 +83,6 @@ const MainLayout = ({ children }) => {
 
 
 
-
-
-
-  return(
-<Layout style={{ minHeight: '100vh' }}>
     
 
  return(

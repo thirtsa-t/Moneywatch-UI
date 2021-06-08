@@ -32,21 +32,6 @@ const Homepage = () => {
           
           </h3>
         </div>
-<<<<<<< HEAD
-        <div className="about-paragraphy">
-          <h3 style={contentStyle}>
-          <p2> " Do not save what is left after spending, but spend what is left after saving. "</p2>
-          </h3>
-        </div>
-        <div className="about-paragraphy">
-          <h3 style={contentStyle}>
-            <p3>" Never spend your money before you have it. "</p3>
-          </h3>
-        </div>
-        <div className="about-paragraphy">
-          <h3 style={contentStyle}>
-            <p5>" He who buys what he does not need, steals from himself. "</p5>
-=======
         <div>
           <h3 style={contentStyle} className="about-paragraphy">
           <p2>"Do not save what is left after spending, but spend what is left after saving."</p2>
@@ -60,7 +45,6 @@ const Homepage = () => {
         <div>
           <h3 style={contentStyle}className="about-paragraphy" >
             <p5>"He who buys what he does not need, steals from himself."</p5>
->>>>>>> 2fa8bec2ad67ed919969d33cd6266a01eefa8dca
           </h3>
         </div>
       </Carousel>
