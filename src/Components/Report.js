@@ -27,8 +27,9 @@ const Report = () => {
 
   return (
     <Card className="report-container">
-      <Layout>
+  
    <Header className="site-layout-background" style={{ padding: 0 ,backgroundColor: "white"}} >
+     <div>
    <Row gutter={16}>
     <Col span={12}>
       <Statistic   className="balance2" title="Start balance" value={112893} />
@@ -43,6 +44,7 @@ const Report = () => {
       <Statistic title="Status" value={112893} loading />
     </Col>
   </Row>,
+  </div>
         </Header>
         <Content style={{backgroundColor: "white"}} >
           <div ><Row gutter={16}>
@@ -51,9 +53,7 @@ const Report = () => {
     </Col>
     <Col span={12}>
       <Statistic  className="balance2" title="Actual expenses " value={112893} precision={2} />
-      <Button style={{ marginTop: 16 }} type="primary">
-        Change
-      </Button>
+     
     </Col>
   </Row>,   
           </div>
@@ -85,7 +85,7 @@ const Report = () => {
     </Col>
   </Row>,   </div>
         </Content>
-        </Layout>
+      
     </Card>
   );
 };

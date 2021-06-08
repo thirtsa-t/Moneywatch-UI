@@ -18,7 +18,8 @@ import {
 } from '@ant-design/icons';
 
 import AddTransaction from './addTransaction';
-import Report from './Report'
+import Report from './Report';
+import Budget from './Budget';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -84,6 +85,30 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
       <Report/>
     </Modal>
   );
+  
+  return (
+    <Modal
+      visible={visible}
+      title="Budget"
+      width="100vh"
+      okText="Save"
+      cancelText="Cancel"
+      onCancel={onCancel}
+      onOk={() => {
+        form
+          .validateFields()
+          .then((values) => {
+            form.resetFields();
+            onCreate(values);
+          })
+          .catch((info) => {
+            console.log("Validate Failed:", info);
+          });
+      }}
+    >
+      <Budget/>
+    </Modal>
+  );
 };
 
 
@@ -128,8 +153,10 @@ const MainLayout = ({ children }) => {
           
             </Link>
           </Menu.Item>
-          <Menu.Item key="sub2" icon={<MoneyCollectOutlined />}>Bugdet
-      
+          <Menu.Item key="sub2" icon={<MoneyCollectOutlined />}>
+          <Link to="Bugdet">
+            Bugdet
+            </Link>
           </Menu.Item>
           <Menu.Item key="9" icon={<WalletOutlined />}>
             Transaction
