@@ -1,78 +1,93 @@
-import React,{useState} from 'react';
-import ReactDOM from 'react-dom';
-import {Link} from 'react-router-dom';
-import 'antd/dist/antd.css';
-import './index.css';
-import { Layout, Menu,Card} from 'antd';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
+import "antd/dist/antd.css";
+import "./index.css";
 import {
+  Form,
+  Input,
+  Select,
+  Statistic,
+   Row,
+    Col, 
+    Button,
+  Tooltip,
+  Space,
+  Typography,
+  Card,
+  Layout,
+  Progress
 
-  SearchOutlined,
-  GithubOutlined,
-  LinkedinFilled,
-  TwitterOutlined,
-  SlackSquareOutlined, 
-  WalletOutlined,
-  MenuOutlined,
-  MoneyCollectOutlined, 
-  QuestionCircleFilled,
-  
-} from '@ant-design/icons';
+} from "antd";
+const { Header, Content, Footer, Sider } = Layout;
 
-const { Header, Sider, Content } = Layout;
-const Report=({children}) =>{
-    const [collapsed,setCollapsed]= useState(false)
-  const toggle = () => {
- setCollapsed(!collapsed)
+const Report = () => {
+  const onFinish = (values) => {
+    console.log("Received values of form: ", values);
   };
 
-    return (
-      <Card>
+  return (
+    <Card className="report-container">
       <Layout>
-        <Sider className='ant-menu' trigger={null} collapsible collapsed={collapsed} width="10vh" 
-        style={{minHeight: "200vh", position:"fixed", backgroundColor:"white"}}>
-          <div className="siderIcon" />
-
-          <Menu mode="inline" defaultSelectedKeys={['0']}>
-          <Menu.Item key="1" icon={<MenuOutlined style={{fontSize:"15px"}} />}></Menu.Item>
-
-            <Menu.Item key="2" icon={<WalletOutlined style={{fontSize:"18px", marginTop:"20px"}}/>}>
-            </Menu.Item><p style={{fontSize:"10px", marginTop:"5px", marginLeft:"10px"}}>Transaction</p>
-
-            <Menu.Item key="3" icon={<MoneyCollectOutlined style={{fontSize:"18px", marginTop:"20px"}}/>}>
-            </Menu.Item><p style={{fontSize:"10px", marginTop:"5px", marginLeft:"16px"}}>Budget</p>
-
-            <Menu.Item key="4" icon={<QuestionCircleFilled  style={{fontSize:"18px", marginTop:"20px"}}/>}>
-            </Menu.Item><p style={{fontSize:"10px", marginTop:"5px", marginLeft:"16px"}}>Report</p>
-
-          </Menu>
-        </Sider>
-        <Layout className="site-layout">
-          
-          <Header className="header-layout" width="10vh" style={{ padding: 0, backgroundColor:"white" }}>
-          <div className="headerIcon">
-        
-    
-          <SearchOutlined className="searchIcon"/>
-          </div> 
-          </Header>
-          <Content
-            className="site-layout-background"
-            style={{
-              margin: '24px 16px',
-              padding: 24,
-              minHeight: 280,
-            }}
-          >
-            ({children})
-          </Content>
+   <Header className="site-layout-background" style={{ padding: 0 ,backgroundColor: "white"}} >
+   <Row gutter={16}>
+    <Col span={12}>
+      <Statistic   className="balance2" title="Start balance" value={112893} />
+    </Col>
+    <Col span={12}>
+      <Statistic  className="balance2" title="End Balance " value={112893} precision={2} />
+      <Button style={{ marginTop: 16 }} type="primary">
+        Change
+      </Button>
+    </Col>
+    <Col span={12}>
+      <Statistic title="Status" value={112893} loading />
+    </Col>
+  </Row>,
+        </Header>
+        <Content style={{backgroundColor: "white"}} >
+          <div ><Row gutter={16}>
+    <Col span={12}>
+      <Statistic   className="balance2" title="Expected expenses" value={112893} />
+    </Col>
+    <Col span={12}>
+      <Statistic  className="balance2" title="Actual expenses " value={112893} precision={2} />
+      <Button style={{ marginTop: 16 }} type="primary">
+        Change
+      </Button>
+    </Col>
+  </Row>,   
+          </div>
+          <div><Row gutter={16}>
+    <Col span={12}>
+      <Statistic   className="balance2" title="Expected income" value={112893} />
+    </Col>
+    <Col span={12}>
+      <Statistic  className="balance2" title="Actual income " value={112893} precision={2} />
+      
+    </Col>
+  </Row>,   </div>
+          <div><Row gutter={16}>
+    <Col span={12}>
+      <Statistic   className="balance2" title="Expected expenses" value={112893} />
+    </Col>
+    <Col span={12}>
+      <Statistic  className="balance2" title="Actual expenses " value={112893} precision={2} />
+      
+    </Col>
+  </Row>,   </div>
+  <div><Row gutter={16}>
+    <Col span={12}>
+      <Statistic   className="balance2" title="Expected savings" value={112893} />
+    </Col>
+    <Col span={12}>
+      <Statistic  className="balance2" title="Actual savings " value={112893} precision={2} />
+      
+    </Col>
+  </Row>,   </div>
+        </Content>
         </Layout>
-      </Layout>
-      </Card>
-
-    );
-  }
-
-
-
+    </Card>
+  );
+};
 
 export default Report;

@@ -15,15 +15,18 @@ const Contactpage=()=>{
             </h1>
             <h2>
             Phone: +250 789 098 736
-            Email: SheCanCode@gmail.com 
+            
             </h2>
+            <h3 className='h3Contactus'>
+            Email: SheCanCode@gmail.com   
+            </h3>
 
         </Card>
         <div className='footer'>
                 <footer>
                    <p1 className=''>terms of service </p1> 
-                    <p1 > privacy of policy</p1>
-                    <p2 style={{float: 'right'}}>Copyright@2021MoneyWatch</p2>
+                    <p2 style={{justifycontent:'space-between'}}> privacy of policy</p2>
+                    <p3 style={{float: 'right'}}>Copyright@2021MoneyWatch</p3>
                 </footer>
             </div>
         </>
