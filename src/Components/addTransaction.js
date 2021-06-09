@@ -33,7 +33,7 @@ const AddTransaction = () => {
    
       <Row>
         <Col span={12}>
-          <Form.Item label=" Transaction Type">
+          <Form.Item label=" Transaction Type"  >
             <Input.Group compact>  
               <Form.Item
                 name="category"

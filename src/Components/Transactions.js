@@ -15,23 +15,26 @@ const [sortedInfo, setSortedInfo]=useState(null);
 const columns = [
   {
     title: 'Date',
-    dataIndex: 'name',
-    key: 'name',
-    sorter: (a, b) => a.name.length - b.name.length,
+    dataIndex: 'Date',
+    key: 'Date',
+    sorter: (a, b) => a.Date - b.Date,
     ellipsis: true,
   },
   {
-    title: 'Trans-Type',
-    dataIndex: 'age',
-    key: 'age',
-    sorter: (a, b) => a.age - b.age,
+    title: 'Trans-type',
+    dataIndex: 'transactionType',
+    key: 'transactionType',
+    filters: [
+       { text: 'Income', value: 'expenses' },
+     { text:'expenses' , value:'Income' },
+    ],
     ellipsis: true,
   },
   {
-    title: 'Address',
-    dataIndex: 'address',
-    key: 'address',
-    sorter: (a, b) => a.address.length - b.address.length,
+    title: 'Amount',
+    dataIndex: 'Amount',
+    key: 'Amount',
+    sorter: (a, b) => a.Amount.length - b.Amount.length,
     ellipsis: true,
   },
   {
