@@ -1,29 +1,89 @@
 [
     {
         "key":1,
-        "name": "John Brown",
-        "age": 32,
-        "address":" New York No. 1 Lake Park"
-      },
-      {
-        "key":2,
-        "name": "John Yamu",
-        "age": 42,
-        "address":" New York No. 1 Lake Park"
-      },
-      {
-        "key":3,
-        "name": "John Brown",
-        "age": 52,
-        "address":" New York No. 1 Lake Park"
-      },
-      {
-        "key":4,
-        "name": "John Ben",
-        "age": 22,
-        "address":" New York No. 1 Lake Park"
-      }
-            
+        "Date":" 13/3/2021",
+        "transactionType": "Income",
+        "Amount":" 33553"
+      }, 
+      
+    {
+      "key":2,
+      "Date":"24/2/2021",
+      "transactionType": "Income",
+      "Amount":" 21235"
+    },    
+    
+    {
+      "key":3,
+      "Date":"12/9/2021" ,
+      "transactionType": "Income",
+      "Amount":" 34533"
+    },  
+    
+    {
+      "key":4,
+      "Date": "12/1/2021",
+      "transactionType": "Income",
+      "Amount":" 70000"
+    } ,
+      
+    {
+      "key":4,
+      "Date": "12/8/2021",
+      "transactionType": "Income",
+      "Amount":" 70000"
+    },
+      
+    {
+      "key":4,
+      "Date": "1/7/2021",
+      "transactionType": "Income",
+      "Amount":" 70000"
+    },
+      
+    {
+      "key":4,
+      "Date":"4/12/2021" ,
+      "transactionType": "Income",
+      "Amount":" 70000"
+    },
+      
+    {
+      "key":4,
+      "Date": "3/4/2021",
+      "transactionType": "expenses",
+      "Amount":" 704320054"
+    },
+      
+    {
+      "key":3,
+    "Date":"12/9/2021" ,
+    "transactionType": "expenses",
+    "Amount":" 700054"
+    },
+
+    {
+    "key":4,
+    "Date":"15/2/2021" ,
+    "transactionType": "expenses",
+    "Amount":" 700054"
+  },
+    
+  
+  {
+    "key":4,
+    "Date":"17/5/2021" ,
+    "transactionType": "expenses",
+    "Amount":" 70564"
+  },
+    
+  {
+    "key":4,
+    "Date": "10/3/2021",
+    "transactionType": "expense",
+    "Amount":" 765400"
+  }
+    
   ]
   
   

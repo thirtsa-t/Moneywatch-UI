@@ -1,5 +1,5 @@
 .signuptop-form {
-  background: green;
+  background: rgb(117, 13, 13);
   background-size: cover;
   background-repeat: no-repeat;
   /* background-attachment: fixed; */
@@ -32,7 +32,7 @@
    }
    .menu-icon :hover{
 
-    color:green;
+    color:rgb(117, 13, 13);
    }
    
 
@@ -58,31 +58,31 @@
 
 .login-form-button {
   color: white;
-  background: green;
+  background:rgb(117, 13, 13) ;
   margin-right: 20px;
   width: 130px;
 }
 .login-form-button:hover {
   opacity: 0.7;
   color: white;
-  background: green;
+  background: rgb(117, 13, 13);
 }
 .logout-form-button {
     color: white;
-    background: green;
+    background:rgb(117, 13, 13) ;
     width: 100px;
     margin: 0% 30% 30% 90%;
   }
   .logout-form-button:hover {
     opacity: 0.7;
     color: white;
-    background: green;
+    background:rgb(117, 13, 13);
   }
 
  .add-button:hover {
     opacity: 0.7;
     color: white;
-    background: green;
+    background:rgb(117, 13, 13);
 
  }
 .home-layout {
@@ -127,19 +127,21 @@
   margin: 30px 40px 30px;
 }
 .footer {
-  background-color: green;
+  background-color:rgb(117, 13, 13) ;
   height: 15vh;
   padding: 25px;
   width: 100%;
 }
 .foot {
-  margin-left: 100px;
+  height: 50%;
+  width: 75%;
+  margin-left: 60%;
 }
 .home-button {
   /* margin-top: 15%; */
   margin: 0% 0% 0% 45% ;
   /* background-color: white; */
-  background: green;
+  background:rgb(117, 13, 13) ;
   color: white;
   width: 150px;
   height: 60px;
@@ -148,7 +150,7 @@
 }
 .home-button:hover{
   opacity: 0.8;
-  background: green;
+  background:rgb(117, 13, 13);
   color: white;
   width: 150px;
   height: 60px;
@@ -168,8 +170,10 @@
   margin-left: 85%;
 }
 .feet {
-  margin-left: 950px;
-  margin-top: 30vh;
+  height: 100%;
+  width: 75%;
+  margin-left: 10%;
+
 }
 
 
