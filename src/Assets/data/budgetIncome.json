@@ -1,0 +1,41 @@
+
+[
+    {
+        "key":1,
+        "Date":" 13/3/2021",
+        "categoryName": "salary",
+       "Amount":" 33553"
+      }, 
+      {
+        "key":2,
+        "Date":" 13/3/2021",
+        "categoryName": "friends",
+        "Amount":" 33553"
+      },
+      {
+        "key":3,
+        "Date":" 13/3/2021",
+        "categoryName": "wage",
+        "Amount":" 33553"
+      },
+      {
+        "key":4,
+        "Date":" 13/3/2021",
+        "categoryName": "wage",
+        "Amount":" 33553"
+      },
+      {
+        "key":5,
+        "Date":" 13/3/2021",
+        "categoryName": "salary",
+        "Amount":" 33553"
+      },
+      {
+        "key":6,
+        "Date":" 13/3/2021",
+        "categoryName": "wage",
+        "Amount":" 33553"
+      }
+
+  
+  ]

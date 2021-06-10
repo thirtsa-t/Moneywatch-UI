@@ -1,0 +1,41 @@
+
+[
+    {
+        "key":1,
+        "Date":" 13/3/2021",
+        "categoryName": "transport",
+        "Amount":" 33553"
+      }, 
+      {
+        "key":26,
+        "Date":" 13/3/2021",
+        "categoryName": "transport",
+        "Amount":" 33553"
+      },
+      {
+        "key":3,
+        "Date":" 13/3/2021",
+        "categoryName": "electricity",
+        "Amount":" 33553"
+      },
+      {
+        "key":4,
+        "Date":" 13/3/2021",
+        "categoryName": "bills",
+        "Amount":" 33553"
+      },
+      {
+        "key":5,
+        "Date":" 13/3/2021",
+        "categoryName": "rent",
+        "Amount":" 33553"
+      },
+      {
+        "key":6,
+        "Date":" 13/3/2021",
+        "categoryName": "water",
+        "Amount":" 33553"
+      }
+
+  
+  ]

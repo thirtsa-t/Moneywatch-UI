@@ -1,0 +1,41 @@
+
+[
+    {
+        "key":1,
+        "Date":" 13/3/2021",
+        "categoryName": "laptop",
+        "Amount":" 33553"
+      }, 
+      {
+        "key":2,
+        "Date":" 13/3/2021",
+        "categoryName": "house",
+        "Amount":" 33553"
+      },
+      {
+        "key":3,
+        "Date":" 13/3/2021",
+        "categoryName": "electricity",
+        "Amount":" 33553"
+      },
+      {
+        "key":4,
+        "Date":" 13/3/2021",
+        "categoryName": "health",
+        " Amount":" 33553"
+      },
+      {
+        "key":5,
+        "Date":" 13/3/2021",
+        "categoryName": "emergency",
+        "Amount":" 33553"
+      },
+      {
+        "key":6,
+        "Date":" 13/3/2021",
+        "categoryName": "car",
+        "Amount":" 33553"
+      }
+
+  
+  ]
