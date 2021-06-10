@@ -122,7 +122,7 @@ const MainLayout = ({ children }) => {
 
         <Footer style={{ textAlign: 'center' }}>twisted boot coders©2021 Created by Money Watch</Footer>
 
-
+</Layout>
     </Layout>
   )
 }

@@ -75,7 +75,7 @@ const Report = () => {
         '0%': '#108EE9',
         '100%': '#FF0000',
       }}
-      percent={60}
+      percent={100}
     />
     </div>
     </Col>
