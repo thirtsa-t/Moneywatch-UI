@@ -21,7 +21,7 @@ const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
   const [expand, setExpand] = useState(false);
   const [form] = Form.useForm();
   const getFields = () => {
-    const count = expand ? 5 : 3;
+    const count = expand ? 10 : 6;
     const children = [];
     return children;
   };
@@ -119,8 +119,10 @@ const MainLayout = ({ children }) => {
           />
           {children}
         </Content>
+
         <Footer style={{ textAlign: 'center' }}>twisted boot coders©2021 Created by Money Watch</Footer>
-      </Layout>
+
+
     </Layout>
   )
 }
