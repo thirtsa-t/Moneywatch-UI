@@ -1,15 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {Link} from 'react-router-dom'
+import {Link,useHistory} from 'react-router-dom'
 import 'antd/dist/antd.css';
 import './index.css';
-import { Form, Input, Button, Checkbox, Card  } from 'antd';
+import { Form, Input, Button, Checkbox, Card ,notification } from 'antd';
 import { UserOutlined, LockOutlined, GoogleOutlined,FacebookOutlined  } from '@ant-design/icons';
-import { useHistory } from 'react-router-dom';
+import ApiService from "../Services/apiMoneyWatch";
 
-const signinComponent = () => {
+const SigninComponent = () => {
+  const history = useHistory();
   const onFinish = async (values) => {
     console.log('Received values of form: ', values);
+// const res = await ApiService.signinUser(values);
+// if(!res){
+// notification.error({message:"Login failed, please try again."})
+// return;
+// }
+// if(res.status === 201){
+notification.success({message:"Login success"})
+return history.push("/Report");
+// }
+
   };
   return (
     <div>
@@ -84,12 +95,12 @@ const signinComponent = () => {
           </Form.Item>
           <Form.Item>
             
-            <Link to="/dashboard">
+            {/* <Link to="/dashboard"> */}
 
             <Button type="primary"  htmlType="submit" className="login-form-button">
               Log in
         </Button> 
-            </Link>
+            {/* </Link> */}
         Or <a href="/signup">Register now!</a>
           </Form.Item>
         </Form>
@@ -97,4 +108,4 @@ const signinComponent = () => {
     </div>
   );
 }
-export default signinComponent;
+export default SigninComponent;
