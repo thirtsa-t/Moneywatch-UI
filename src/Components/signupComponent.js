@@ -4,12 +4,43 @@ import {Link} from 'react-router-dom';
 import './index.css';
 import { useHistory } from 'react-router-dom';
 import { Form, Input, Cascader, Select, Row, Col, Checkbox, Button, AutoComplete, Card, notification } from 'antd';
-
+import MoneyApi from "../Services/apiMoneyWatch";
 
 const SignupComponent = () => {
   const history = useHistory();
+
+
   const onFinish = async (values) => {
     console.log("Received values of form: ", values);
+
+    let data = {
+      firstName: values.firstName,
+      lastName: values.lastName,
+      address: [
+          {
+              "province": "Kigali",
+              "district": "Gasabo",
+              "sector": "Kimironko"
+          }
+      ],
+      email: values.email,
+      password: values.password,
+      phoneNumber: values.phone,
+      gender: values.gender,
+      
+    role: "user",
+    isActive: "true"
+  };
+
+   const response = await MoneyApi.signupUser(data);
+
+   if (!response){
+     notification.error({message:'failed to signup'})
+     return
+   }
+   if(response.status === 201){
+    return notification.success({message:'Signup success'})
+   }
 
 
   }

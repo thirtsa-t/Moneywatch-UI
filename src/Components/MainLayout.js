@@ -67,9 +67,9 @@ const MainLayout = ({ children }) => {
     <Layout style={{ minHeight: '100vh' }}>
       <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}  style={{ backgroundColor: "white",minHeight: '100vh' }}>
         <div className="logo" />
-        <Menu theme="red" defaultSelectedKeys={['1']} mode="inline" className="menu-icon">
-          <Menu.Item key="1" icon={<PieChartOutlined />}>
-        </Menu.Item>
+        <Menu theme="red" defaultSelectedKeys={['sub1']} mode="inline" className="menu-icon">
+          {/* <Menu.Item key="1" icon={<PieChartOutlined />}>
+        </Menu.Item> */}
           <Menu.Item key="2" icon={<MenuOutlined />}>
         </Menu.Item>
           <Menu.Item key="sub1" icon={<ReconciliationOutlined />} >
