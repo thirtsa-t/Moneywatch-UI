@@ -12,46 +12,11 @@ import {
   MoneyCollectOutlined,
   ReconciliationOutlined,
 } from '@ant-design/icons';
-import AddTransaction from './addTransaction';
 import Report from './Report';
 import Budget from './Budget'
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
-const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
-  const [expand, setExpand] = useState(false);
-  const [form] = Form.useForm();
-  const getFields = () => {
-    const count = expand ? 10 : 6;
-    const children = [];
-    return children;
-  };
-  const onFinish = (values) => {
-    console.log('Received values of form: ', values);
-  };
-  return (
-    <Modal
-      visible={visible}
-      title="Add transaction"
-      width="60%"
-      okText="Save"
-      cancelText="Cancel"
-      onCancel={onCancel}
-      onOk={() => {
-        form
-          .validateFields()
-          .then((values) => {
-            form.resetFields();
-            onCreate(values);
-          })
-          .catch((info) => {
-            console.log("Validate Failed:", info);
-          });
-      }}
-    >
-      <AddTransaction/>
-    </Modal>
-  );
-};
+
 const MainLayout = ({ children }) => {
   const [collapsed, setCollapsed] = useState(false);
   const onCollapse = (collapsed) => {
@@ -100,23 +65,7 @@ const MainLayout = ({ children }) => {
       </Link>
         </Header>
         <Content style={{ margin: '0 16px' }}>
-          <Button
-            type="primary"
-            shape="circle"
-            className="add-trans"
-            onClick={() => {
-              setVisible(true);
-            }}
-          >
-            +
-      </Button> 
-          <CollectionCreateForm
-            visible={visible}
-            onCreate={onCreate}
-            onCancel={() => {
-              setVisible(false);
-            }}
-          />
+      
           {children}
         </Content>
 

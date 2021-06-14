@@ -4,23 +4,64 @@ import "antd/dist/antd.css";
 import "./index.css";
 import {
   Form,
-  Input,
-  Select,
+  Modal,
   Statistic,
    Row,
     Col, 
     Button,
-  Tooltip,
-  Space,
-  Typography,
   Card,
   Layout,
   Progress
 } from "antd";
+
+import AddTransaction from './addTransaction';
 const { Header, Content, Footer, Sider } = Layout;
+
+const CollectionCreateForm = ({ visible, onCreate, onCancel }) => {
+  const [expand, setExpand] = useState(false);
+  const [form] = Form.useForm();
+  const getFields = () => {
+    const count = expand ? 10 : 6;
+    const children = [];
+    return children;
+  };
+  const onFinish = (values) => {
+    console.log('Received values of form: ', values);
+  };
+  return (
+    <Modal
+      visible={visible}
+      title="Add transaction"
+      width="60%"
+      okText="Save"
+      cancelText="Cancel"
+      onCancel={onCancel}
+      onOk={() => {
+        form
+          .validateFields()
+          .then((values) => {
+            form.resetFields();
+            onCreate(values);
+          })
+          .catch((info) => {
+            console.log("Validate Failed:", info);
+          });
+      }}
+    >
+      <AddTransaction/>
+    </Modal>
+  );
+};
+
 const Report = () => {
   const onFinish = (values) => {
     console.log("Received values of form: ", values);
+  };
+
+  const [visible, setVisible] = useState(false);
+  const onCreate = (values) => {
+    console.log("Received values of form: ", values);
+    setVisible(false);
   };
   return (
     <Card className="report-container">
@@ -28,6 +69,23 @@ const Report = () => {
     <Col span={12}>
       <Statistic   className="balance2" title="Start balance" value={112893} />
     </Col>
+    <Button
+            type="primary"
+            shape="circle"
+            className="add-trans"
+            onClick={() => {
+              setVisible(true);
+            }}
+          >
+            +
+      </Button> 
+          <CollectionCreateForm
+            visible={visible}
+            onCreate={onCreate}
+            onCancel={() => {
+              setVisible(false);
+            }}
+          />
     <Col span={12}>
       <Statistic  className="balance2" title="Current Balance " value={112893} precision={2} />
       <Button style={{ marginTop: 16 }} type="primary">

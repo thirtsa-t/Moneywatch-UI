@@ -1,7 +1,7 @@
 import React from "react";
 import image from "../Assets/image.jpg";
 import "./index.css";
-import { Button ,Carousel} from "antd";
+import { Button ,Carousel,Card} from "antd";
 import { Link } from "react-router-dom";
 
 const contentStyle = {
@@ -17,7 +17,7 @@ const Homepage = () => {
     <div className="home-layout">
       <div className="home-black">
         
-      <h1 style={{ margin: "3% 0% 0% 5%", font: "15px", color: "white" }}>
+      <h1 style={{ margin: "0% 0% 0% 5%", font: "15px", color: "white" }}>
         Money watch
       </h1>
       {/* <h1 className="home">English</h1> */}
