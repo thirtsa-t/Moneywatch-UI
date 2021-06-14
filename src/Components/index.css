@@ -93,13 +93,15 @@
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
+  padding:0;
 
   opacity: 0.7 black;
 }
 .home-black{
   background:black;
   opacity: 0.7;
-
+width: 100%;
+padding-top: 20px;
   height: 100vh;
 }
 .home {
@@ -191,8 +193,8 @@
 
   background:white;
   height: 100%;
-  width: 75%;
-  margin-left: 10%;
+  width: 100%;
+  /* margin-left: 10%; */
 }
 
 

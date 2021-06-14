@@ -57,8 +57,11 @@ const handleChange = (pagination,  sorter) => {
     return(
       
         <Card >   <div className="card-container">
+
+<Button type="primary" style={{float: 'right'}}>Add</Button>
         <Tabs type="card">
           <TabPane tab="expenses" key="1">
+
             
           <Table columns={columns} dataSource={dataExpense} onChange={handleChange} />
           </TabPane>
