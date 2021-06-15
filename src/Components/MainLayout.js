@@ -68,8 +68,16 @@ const MainLayout = ({ children }) => {
       
           {children}
         </Content>
-
-        <Footer style={{ textAlign: 'center' }}>twisted boot coders©2021 Created by Money Watch</Footer>
+        
+        <div className='footer'>
+                <footer>
+                   <p1 style={{marginRight: '10%', color:'white', fontSize:'20px'}} >terms of service </p1> 
+                    <p2 style={{marginLeft: '30%', color:'white', fontSize:'20px'}}> privacy of policy</p2>
+                    <p3 style={{float: 'right', color:'white', fontSize:'20px'}}>Copyright@2021MoneyWatch</p3>
+                </footer>
+            </div>
+        
+        {/* <Footer style={{ textAlign: 'center' }}>twisted boot coders©2021 Created by Money Watch</Footer> */}
 
 </Layout>
     </Layout>
