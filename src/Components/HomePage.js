@@ -3,7 +3,7 @@ import image from "../Assets/image.jpg";
 import "./index.css";
 import { Button ,Carousel,Card} from "antd";
 import { Link } from "react-router-dom";
-import saves from '../Assets/saves.png';
+import LOGO from '../Assets/LOGO.png';
 
 const contentStyle = {
   height: '260px',
@@ -18,8 +18,8 @@ const Homepage = () => {
     <div className="home-layout">
       <div className="home-black">
         <div>
-      <img src={saves} Alt='' style={{ width: '2% ' }}></img> 
-      <h1 style={{ margin: "0% 0% 0% 5%", font: "15px", color: "white" }}>
+      <img src={LOGO} Alt='' style={{ width: '5% ',position:'fixed' }}></img> 
+      <h1 style={{ margin: "0% 0% 10% 5%", font: "15px", color: "white" }}>
         Money watch
         </h1>
         </div>
