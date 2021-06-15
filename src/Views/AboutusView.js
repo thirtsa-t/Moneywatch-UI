@@ -1,5 +1,5 @@
 import React from 'react';
-import Aboutus from '../Components/aboutus';
+import Aboutus from '../Components/Aboutus';
 
 
 
