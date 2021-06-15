@@ -66,8 +66,12 @@ const Report = () => {
   return (
     <Card className="report-container">
  <Row gutter={16}>
-    <Col span={12}>
-      <Statistic   className="balance2" title="Start balance" value={112893} />
+    <Col span={12} >
+      <h1 className="balance-word">Start balance</h1>
+      <Statistic   className="balance2"  value={112893} />
+      <Button style={{ marginTop: 16 }} type="primary">
+        Edit
+      </Button>
     </Col>
     <Button
             type="primary"
@@ -86,17 +90,18 @@ const Report = () => {
               setVisible(false);
             }}
           />
-    <Col span={12}>
-      <Statistic  className="balance2" title="Current Balance " value={112893} precision={2} />
-      <Button style={{ marginTop: 16 }} type="primary">
-        Edit
-      </Button>
+    <Col span={12} >
+      <h1 className="balance-word">Current balance </h1>
+      <Statistic  className="balance2" value={112893} precision={2} />
+     
     </Col>
   </Row>    
   <hr></hr>
 <Row >
     <Col span={6}  style={{margin:'20px 10px 10px 30px'}}>
-      <Statistic  className="balance2" title="Expected Income" value={100000} precision={2} />
+      {/* <Statistic  className="balance2" title="Expected Income" value={100000} precision={2} /> */}
+      <h1 className="balance-word">Expected Income</h1>
+      <Statistic   className="balance2"  value={112893} />
     <Progress
       strokeColor={{
         '0%': '#108EE9',
@@ -104,8 +109,10 @@ const Report = () => {
       }}
       percent={100}
     />
-      <div style={{margin:'80px 10px 10px 30px'}}>
-      <Statistic  className="balance2" title="Actual Income" value={20000} precision={2} />
+      <div style={{margin:'80px 10px 10px 5px'}}>
+      {/* <Statistic  className="balance2" title="Actual Income" value={20000} precision={2} /> */}
+      <h1 className="balance-word">Actual Income</h1>
+      <Statistic   className="balance2"  value={112893} />
       <Progress
       type="circle"
       strokeColor={{
@@ -117,7 +124,9 @@ const Report = () => {
     </div>
     </Col>
     <Col span={6}  style={{margin:'20px 10px 10px 30px'}}>
-      <Statistic  className="balance2" title="Expected expenses" value={100000} precision={2} />
+      {/* <Statistic  className="balance2" title="Expected expenses" value={100000} precision={2} /> */}
+      <h1 className="balance-word">Expected expenses</h1>
+      <Statistic   className="balance2"  value={112893} />
     <Progress
       strokeColor={{
         '0%': '#108EE9',
@@ -125,8 +134,10 @@ const Report = () => {
       }}
       percent={100}
     />
-    <div style={{margin:'80px 10px 10px 30px'}}>
-      <Statistic  className="balance2" title="Actual expenses" value={20000} precision={2}/>
+    <div style={{margin:'80px 10px 10px   5px'}}>
+      {/* <Statistic  className="balance2" title="Actual expenses" value={20000} precision={2}/> */}
+      <h1 className="balance-word">Actual expenses</h1>
+      <Statistic   className="balance2"  value={112893} />
       <Progress
       type="circle"
       strokeColor={{
@@ -138,7 +149,9 @@ const Report = () => {
     </div>
     </Col>
     <Col span={6} style={{margin:'20px 10px 10px 30px'}}>
-      <Statistic  className="balance2" title="expected Savings" value={100000} precision={2}/> 
+      {/* <Statistic  className="balance2" title="expected Savings" value={100000} precision={2}/>  */}
+      <h1 className="balance-word">Expected savings</h1>
+      <Statistic   className="balance2"  value={112893} />
     <Progress
       strokeColor={{
         '0%': '#108EE9',
@@ -146,8 +159,10 @@ const Report = () => {
       }}
       percent={60}
     />
-       <div style={{margin:'80px 10px 10px 30px'}}>
-      <Statistic  className="balance2" title="Actual Savings" value={20000} precision={2} />
+       <div style={{margin:'80px 10px 10px 5px'}}>
+      {/* <Statistic  className="balance2" title="Actual Savings" value={20000} precision={2} /> */}
+      <h1 className="balance-word">Actual Savings</h1>
+      <Statistic   className="balance2"  value={112893} />
       <Progress
       type="circle"
       strokeColor={{
