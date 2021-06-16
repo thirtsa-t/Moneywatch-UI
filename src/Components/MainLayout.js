@@ -4,7 +4,6 @@ import ReactDOM from 'react-dom';
 import {Link} from 'react-router-dom'
 import 'antd/dist/antd.css';
 import './index.css';
-import LOGO from '../Assets/LOGO.png';
 import { Layout, Menu, Breadcrumb, Button, Affix, Modal, Form, Input, Radio } from 'antd';
 import {
   MenuOutlined,
@@ -31,15 +30,12 @@ const MainLayout = ({ children }) => {
   };
  return(
     <Layout style={{ minHeight: '100vh' }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}  style={{ backgroundColor: "white",minHeight: '100vh' }}>
+      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}  style={{padding:0 , backgroundColor: "white",minHeight: '100vh' }}>
         <div className="logo" />
         <Menu theme="red" defaultSelectedKeys={['sub1']} mode="inline" className="menu-icon">
           {/* <Menu.Item key="1" icon={<PieChartOutlined />}>
         </Menu.Item> */}
           <Menu.Item key="2" icon={<MenuOutlined />}>
-          <h1 style={{ margin: "0% 0% 10% 5%", font: "15px", color: "white" }}>
-        Money watch
-        </h1>
         </Menu.Item>
           <Menu.Item key="sub1" icon={<ReconciliationOutlined />} >
         <Link to="Report"> 
@@ -61,7 +57,7 @@ const MainLayout = ({ children }) => {
         </Menu>
       </Sider>
       <Layout className="site-layout">
-        <Header className="site-layout-background" style={{ backgroundColor: "white"}} >
+        <Header className="site-layout-background" style={{ padding: 0 ,backgroundColor: "white"}} >
         <Link to="/signin">
         <Button type="primary"  htmlType="submit" className="logout-form-button">
               Log out
