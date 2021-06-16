@@ -63,6 +63,7 @@ const Report = () => {
     console.log("Received values of form: ", values);
     setVisible(false);
   };
+  
   return (
     <Card className="report-container">
  <Row gutter={16}>

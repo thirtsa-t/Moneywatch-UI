@@ -18,9 +18,9 @@ const Homepage = () => {
     <div className="home-layout">
       <div className="home-black">
         <div>
-      <img src={LOGO} Alt='' style={{ width: '5% ',position:'fixed' }}></img> 
-      <h1 style={{ margin: "0% 0% 10% 5%", font: "15px", color: "white" }}>
-        Money watch
+      <img src={LOGO} Alt='' style={{ width: '7% ',position:'fixed',marginLeft:'2%' }}></img> 
+      <h1 style={{ margin: "0% 0% 15% 9%", font: "15px", color: "white",position:'fixed' }}>
+        Money Watch
         </h1>
         </div>
       
