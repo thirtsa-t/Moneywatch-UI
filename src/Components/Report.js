@@ -155,7 +155,7 @@ const Report = () => {
     <Col span={6}  style={{margin:'20px 10px 10px 30px'}}>
       {/* <Statistic  className="balance2" title="Expected Income" value={100000} precision={2} /> */}
       <h1 className="balance-word">Expected Income</h1>
-      <Statistic   className="balance2"  value={100000} />
+      <Statistic   className="balance2"  value={500000} />
     <Progress
       strokeColor={{
         '0%': '#108EE9',
@@ -166,14 +166,14 @@ const Report = () => {
       <div style={{margin:'80px 10px 10px 5px'}}>
       {/* <Statistic  className="balance2" title="Actual Income" value={20000} precision={2} /> */}
       <h1 className="balance-word">Actual Income</h1>
-      <Statistic   className="balance2"  value={40000} />
+      <Statistic   className="balance2"  value={300000} />
       <Progress
       type="circle"
       strokeColor={{
         '0%': '#108EE9',
         '100%': '#87D068',
       }}
-      percent={45}
+      percent={70}
     />
     </div>
     </Col>
