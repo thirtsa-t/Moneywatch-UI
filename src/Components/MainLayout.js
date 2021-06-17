@@ -58,7 +58,7 @@ const MainLayout = ({ children }) => {
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 ,backgroundColor: "white"}} >
-        <Link to="/signin">
+        <Link to="/home">
         <Button type="primary"  htmlType="submit" className="logout-form-button">
               Log out
         </Button> 
