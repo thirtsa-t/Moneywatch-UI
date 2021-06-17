@@ -30,7 +30,7 @@ const MainLayout = ({ children }) => {
   };
  return(
     <Layout style={{ minHeight: '100vh' }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}  style={{ backgroundColor: "white",minHeight: '100vh' }}>
+      <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}  style={{padding:0 , backgroundColor: "white",minHeight: '100vh' }}>
         <div className="logo" />
         <Menu theme="red" defaultSelectedKeys={['sub1']} mode="inline" className="menu-icon">
           {/* <Menu.Item key="1" icon={<PieChartOutlined />}>
@@ -58,7 +58,7 @@ const MainLayout = ({ children }) => {
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background" style={{ padding: 0 ,backgroundColor: "white"}} >
-        <Link to="/signin">
+        <Link to="/home">
         <Button type="primary"  htmlType="submit" className="logout-form-button">
               Log out
         </Button> 
