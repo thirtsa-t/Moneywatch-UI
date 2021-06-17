@@ -63,15 +63,14 @@ const Report = () => {
     console.log("Received values of form: ", values);
     setVisible(false);
   };
+  
   return (
     <Card className="report-container">
  <Row gutter={16}>
     <Col span={12} >
       <h1 className="balance-word">Start balance</h1>
-      <Statistic   className="balance2"  value={112893} />
-      <Button style={{ marginTop: 16 }} type="primary">
-        Edit
-      </Button>
+      <Statistic   className="balance2"  value={1000000} />
+    
     </Col>
     <Button
             type="primary"
@@ -92,7 +91,7 @@ const Report = () => {
           />
     <Col span={12} >
       <h1 className="balance-word">Current balance </h1>
-      <Statistic  className="balance2" value={112893} precision={2} />
+      <Statistic  className="balance2" value={5000000} precision={2} />
      
     </Col>
   </Row>    
@@ -101,7 +100,7 @@ const Report = () => {
     <Col span={6}  style={{margin:'20px 10px 10px 30px'}}>
       {/* <Statistic  className="balance2" title="Expected Income" value={100000} precision={2} /> */}
       <h1 className="balance-word">Expected Income</h1>
-      <Statistic   className="balance2"  value={112893} />
+      <Statistic   className="balance2"  value={100000} />
     <Progress
       strokeColor={{
         '0%': '#108EE9',
@@ -112,46 +111,46 @@ const Report = () => {
       <div style={{margin:'80px 10px 10px 5px'}}>
       {/* <Statistic  className="balance2" title="Actual Income" value={20000} precision={2} /> */}
       <h1 className="balance-word">Actual Income</h1>
-      <Statistic   className="balance2"  value={112893} />
+      <Statistic   className="balance2"  value={40000} />
       <Progress
       type="circle"
       strokeColor={{
         '0%': '#108EE9',
         '100%': '#87D068',
       }}
-      percent={20}
+      percent={45}
     />
     </div>
     </Col>
     <Col span={6}  style={{margin:'20px 10px 10px 30px'}}>
       {/* <Statistic  className="balance2" title="Expected expenses" value={100000} precision={2} /> */}
       <h1 className="balance-word">Expected expenses</h1>
-      <Statistic   className="balance2"  value={112893} />
+      <Statistic   className="balance2"  value={80000} />
     <Progress
       strokeColor={{
         '0%': '#108EE9',
         '100%': '#87D068',
       }}
-      percent={100}
+      percent={90}
     />
     <div style={{margin:'80px 10px 10px   5px'}}>
       {/* <Statistic  className="balance2" title="Actual expenses" value={20000} precision={2}/> */}
       <h1 className="balance-word">Actual expenses</h1>
-      <Statistic   className="balance2"  value={112893} />
+      <Statistic   className="balance2"  value={79000} />
       <Progress
       type="circle"
       strokeColor={{
         '0%': '#108EE9',
         '100%': '#FF0000',
       }}
-      percent={100}
+      percent={99}
     />
     </div>
     </Col>
     <Col span={6} style={{margin:'20px 10px 10px 30px'}}>
       {/* <Statistic  className="balance2" title="expected Savings" value={100000} precision={2}/>  */}
       <h1 className="balance-word">Expected savings</h1>
-      <Statistic   className="balance2"  value={112893} />
+      <Statistic   className="balance2"  value={50000} />
     <Progress
       strokeColor={{
         '0%': '#108EE9',
@@ -162,14 +161,14 @@ const Report = () => {
        <div style={{margin:'80px 10px 10px 5px'}}>
       {/* <Statistic  className="balance2" title="Actual Savings" value={20000} precision={2} /> */}
       <h1 className="balance-word">Actual Savings</h1>
-      <Statistic   className="balance2"  value={112893} />
+      <Statistic   className="balance2"  value={30000} />
       <Progress
       type="circle"
       strokeColor={{
         '0%': '#108EE9',
         '100%': '#87D068' ,
       }}
-      percent={80}
+      percent={60}
     />
     </div>
     </Col>
