@@ -1,0 +1,1 @@
+chrome-extension://npghpiokpleaiakfmalkmhkcloahfnad/options/options_defaults.js
